@@ -11,11 +11,11 @@ ABasePawn::ABasePawn()
 	PrimaryActorTick.bCanEverTick = true;
 	
 	//Create Components
-	SceneRoot = CreateDefaultSubobject<USceneComponent>("BaseSceneComponent");
-	RootComponent = SceneRoot;
+	BaseSceneRoot = CreateDefaultSubobject<USceneComponent>("BaseSceneComponent");
+	RootComponent = BaseSceneRoot;
 
 	PlayerCapsuleComponent = CreateDefaultSubobject<UCapsuleComponent>("BasePlayerCapsuleComponent");
-	PlayerCapsuleComponent->SetupAttachment(SceneRoot);
+	PlayerCapsuleComponent->SetupAttachment(BaseSceneRoot);
 	
 	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("BaseStaticMesh");
 	StaticMeshComponent->SetupAttachment(PlayerCapsuleComponent);

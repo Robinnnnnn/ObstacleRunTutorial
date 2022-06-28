@@ -28,7 +28,7 @@ public:
 
 	//components
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
-	class USceneComponent* SceneRoot;
+	class USceneComponent* BaseSceneRoot;
 
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
 	class UCapsuleComponent* PlayerCapsuleComponent;
