@@ -26,6 +26,14 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	//components
+	class USceneComponent* SceneRoot;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	class UCapsuleComponent* CollisionCapsuleComponent;
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
+	class UStaticMeshComponent* StaticMeshComponent;
+
+
 private:
 	// declaration of a function
 	void MoveForward(float AxisValue);
@@ -33,4 +41,5 @@ private:
 
 	//rotate camera info here? (pc only)
 
+	
 };
