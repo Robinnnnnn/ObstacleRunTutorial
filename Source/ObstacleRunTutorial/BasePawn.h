@@ -27,9 +27,12 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	//components
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
 	class USceneComponent* SceneRoot;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	class UCapsuleComponent* CollisionCapsuleComponent;
+
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
+	class UCapsuleComponent* PlayerCapsuleComponent;
+	
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
 	class UStaticMeshComponent* StaticMeshComponent;
 
