@@ -8,7 +8,7 @@
 ABasePawn::ABasePawn()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 	
 	//Create Components
 	BaseSceneRoot = CreateDefaultSubobject<USceneComponent>("BaseSceneComponent");
@@ -44,22 +44,24 @@ void ABasePawn::Tick(float DeltaTime)
 void ABasePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	//all movement and action mapping will go here.
-	//bind the named axis from editor to a function
+
 	PlayerInputComponent->BindAxis("MoveForward", this, &ABasePawn::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ABasePawn::MoveRight);
+
+	
 
 }
 
 //axis functions - Declare what the functions will do in relation to the axis of the pawn called upon
-
-void ABasePawn::MoveForward(float AxisValue)
+void ABasePawn::MoveForward(float AxisValue) 
 {
+	UE_LOG(LogTemp, Warning, TEXT("Pressed Forward"));
 	AddMovementInput(GetActorForwardVector()*AxisValue);
 }
 
 void ABasePawn::MoveRight(float AxisValue)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Pressed MoveRight"));
 	AddMovementInput(GetActorRightVector()*AxisValue);
 }
 //action functions
