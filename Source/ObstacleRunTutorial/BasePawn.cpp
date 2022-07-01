@@ -45,9 +45,6 @@ void ABasePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	PlayerInputComponent->BindAxis("MoveForward", this, &ABasePawn::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &ABasePawn::MoveRight);
-
 	
 
 }
@@ -55,13 +52,11 @@ void ABasePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 //axis functions - Declare what the functions will do in relation to the axis of the pawn called upon
 void ABasePawn::MoveForward(float AxisValue) 
 {
-	UE_LOG(LogTemp, Warning, TEXT("Pressed Forward"));
-	AddMovementInput(GetActorForwardVector()*AxisValue);
+	
 }
 
 void ABasePawn::MoveRight(float AxisValue)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Pressed MoveRight"));
-	AddMovementInput(GetActorRightVector()*AxisValue);
+	
 }
 //action functions

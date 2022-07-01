@@ -23,9 +23,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
 	//components
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
 	class USceneComponent* BaseSceneRoot;
@@ -36,13 +33,7 @@ public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
 	class UStaticMeshComponent* StaticMeshComponent;
 
-
-private:
-	// declaration of a function
-	void MoveForward(float AxisValue);
-	void MoveRight(float AxisValue);
-
-	//rotate camera info here? (pc only)
+	
 
 	
 };
